@@ -27,10 +27,22 @@ private:
 //    int posY[3];
     
     // その2
-    int posX[3] = {100, 200, 300};
-    int posY[3] = {100, 200, 300};
+//    int posX[3] = {100, 200, 300};
+//    int posY[3] = {100, 200, 300};
+
     
-    int speed;
-    int radius;
+    int redX;
+    int redY;
+    int speedRed;
+    
+    int blueX;
+    int blueY;
+    int speedBlue;
+    
+    int greenX;
+    int greenY;
+    
+    int radius1;
+    int radius2;
     int increase;
 };
