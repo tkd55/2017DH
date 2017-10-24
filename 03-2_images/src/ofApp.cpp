@@ -18,7 +18,7 @@ void ofApp::draw(){
     
     // 座標系の原点の移動
     // 原点の位置を指定した場所に移動
-    ofTranslate(ofGetWidth()/2, ofGetHeight()/2);
+    ofTranslate(ofGetWidth()/2 - misoda.getWidth()/2, ofGetHeight()/2 - misoda.getHeight()/2);
     misoda.draw(0, 0);
     
     // リサイズ
