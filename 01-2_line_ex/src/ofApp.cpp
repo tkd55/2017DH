@@ -8,35 +8,50 @@ void ofApp::setup(){
     // 円の角を増やす
     ofSetCircleResolution(64);
     
-    speed = 15;
-    radius = 30;
+    // 右端にから左端に戻る円の中心
+    redX = 100;
+    redY = 100;
+    speedRed = 5;
     
+    // 跳ね返る円の中心
+    blueX = 200;
+    blueY = 200;
+    speedBlue = 15;
+    
+    // 縮小する円の中心
+    greenX = 300;
+    greenY = 300;
+    
+    
+    
+    radius1 = 30;
+    radius2 = 30;
     increase = 1;
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    posX[0] = posX[0] + 5;
     
     // 右端に戻る
-    if(ofGetWidth() < posX[0]){
-        posX[0] = 0;
+    redX = redX + speedRed;
+    if(ofGetWidth() < redX-radius1){
+        redX = 0;
     }
 
-    posX[1] = posX[1] + speed;
     // 跳ね返る
-    if(ofGetWidth() < posX[1] ){
-        speed = (-1) * speed;
+    blueX = blueX + speedBlue;
+    if(ofGetWidth() < blueX+radius1 ){
+        speedBlue = (-1) * speedBlue;
     }
-    else if(posX[1] < 0){
-        speed = (-1) * speed;
+    else if(blueX < 0+radius1){
+        speedBlue = (-1) * speedBlue;
     }
 
-    radius = radius + increase;
-    if(80 < radius){
+    radius2 = radius2 + increase;
+    if(80 < radius2){
         increase = (-1) * increase;
     }
-    else if(radius < 10) {
+    else if(radius2 < 10) {
         increase = (-1) * increase;
     }
 }
@@ -45,13 +60,13 @@ void ofApp::update(){
 void ofApp::draw(){
     
     ofSetColor(255, 0, 0);
-    ofDrawCircle(posX[0], posY[0], 30);
+    ofDrawCircle(redX, redY, radius1);
     
     ofSetColor(0, 255, 0);
-    ofDrawCircle(posX[1], posY[1], 30);
+    ofDrawCircle(blueX, blueY, radius1);
     
     ofSetColor(0, 0, 255);
-    ofDrawCircle(posX[2], posY[2], radius);
+    ofDrawCircle(greenX, greenY, radius2);
 }
 
 //--------------------------------------------------------------
