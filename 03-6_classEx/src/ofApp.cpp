@@ -44,6 +44,7 @@ void ofApp::mousePressed(int x, int y, int button){
     position.y = y;
     positions.push_back(position);
     
+    // インスタンスを動的に確保
     Misoda *misoda = new Misoda();
     misoda->setup();
     misodas.push_back(misoda);

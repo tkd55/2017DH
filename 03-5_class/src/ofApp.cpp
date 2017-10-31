@@ -3,15 +3,18 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
     
-//    misoda.setImageSrc("images/misoda.png");
-    misoda.setup(100);
-
-//    kotori.setImageSrc("images/kotori.png");
-    kotori.setup(300);
-
+    // 画像ファイルの読み込み
+    misoda.setup("images/misoda.png");
+    kotori.setup("images/kotori.png");
     
-    click.x = -1;
-    click.y = -1;
+    ofVec2f kotoriPos;
+    kotoriPos.set(300, 100);
+    kotori.setPosition(kotoriPos);
+    
+    ofVec2f misodaPos;
+    misodaPos.set(300, 300);
+    misoda.setPosition(misodaPos);
+
 }
 
 //--------------------------------------------------------------
@@ -21,14 +24,8 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    if(click.x != -1 && click.y != -1){
-        if(isPress){
-            kotori.draw(click);
-        }
-        else {
-            misoda.draw(click);
-        }
-    }
+    misoda.draw();
+    kotori.draw();
 }
 
 //--------------------------------------------------------------
@@ -53,14 +50,12 @@ void ofApp::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button){
-    isPress = true;
-    click.x = x;
-    click.y = y;
+
 }
 
 //--------------------------------------------------------------
 void ofApp::mouseReleased(int x, int y, int button){
-    isPress = false;
+
 }
 
 //--------------------------------------------------------------

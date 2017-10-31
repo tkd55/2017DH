@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
-#include "Misoda.hpp"
+#include "images.hpp"
 
 class ofApp : public ofBaseApp{
 
@@ -23,12 +23,6 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
     
 private:
-    Misoda misoda;
-    Misoda kotori;
-    
-    ofVec2f click;
-    
-    bool isPress;
-
-		
+    Images misoda;
+    Images kotori;
 };
