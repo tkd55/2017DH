@@ -26,5 +26,8 @@ class ofApp : public ofBaseApp{
     ofxBox2d box2d;
     ofxBox2dCircle circles[20];  // 円
 //    vector <shared_ptr<ofxBox2dCircle> > circles;
+    
+    
+    ofImage misoda;
 		
 };

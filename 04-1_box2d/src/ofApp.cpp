@@ -10,7 +10,6 @@ void ofApp::setup(){
     box2d.setFPS(30.0);             // box2Dの世界でのFPS
     box2d.registerGrabbing();       // 物体をつかめるようにする
     
-    
     for(int cnt=0; cnt<20; cnt++){
         // 円の物理パラメータを設定
         // 第一引数 : 密度（比重）
@@ -21,8 +20,13 @@ void ofApp::setup(){
         // box2dの世界に追加する円の設定
         float x = ofRandom(40, ofGetWidth() - 40);
         float y = ofRandom(40, ofGetHeight() - 40);
+       
         circles[cnt].setup(box2d.getWorld(), x, y, 40); // 円を物理世界に追加
     }
+    
+    misoda.load("images/misoda.png");
+    misoda.setAnchorPercent(0.5, 0.5);
+
 }
 
 //--------------------------------------------------------------
@@ -33,14 +37,24 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
     
-    ofSetColor(0, 127, 255);
-    for(int cnt=0; cnt<20; cnt++){
-        circles[cnt].draw();              // 円の描画
-    }
+//    ofSetColor(0, 127, 255);
+//    for(int cnt=0; cnt<20; cnt++){
+//        circles[cnt].draw();              // ÂÜÜ„ÅÆÊèèÁîª
+//    }
     
 //    for(int cnt=0; cnt<circles.size(); cnt++){
 //        circles[cnt].get()->draw();
 //    }
+    
+    for(int cnt=0; cnt<20; cnt++){
+        ofPushMatrix();
+
+            ofTranslate(circles[cnt].getPosition().x, circles[cnt].getPosition().y, 0);
+            ofRotate(circles[cnt].getRotation());
+            misoda.draw(0, 0);
+        
+        ofPopMatrix();
+    }
 }
 
 //--------------------------------------------------------------
