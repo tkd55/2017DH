@@ -44,26 +44,26 @@ void ofApp::update(){
     edgeImage.dilate();
     
     // posterization（画像の粗階調化）
-    unsigned char *colorData = colorImage.getPixels().getData();
-    unsigned char *grayData = grayImage.getPixels().getData();
-    unsigned char *edgeData = edgeImage.getPixels().getData();
-    for (int i = 0; i < 1280*960; i++) {
-        if (edgeData[i] == 0)
-            grayData[i] = (grayData[i] / (threshold+1)) * (threshold+1) + threshold;
-        else
-            grayData[i] = 0;
-    }
-    
-    // updateのようなもの
-    // ofxOpenCv の画像オブジェクトを OpenCV 関数によって変更したり，あるいはピクセルデータを直接書き換えた場合）
-    grayImage.flagImageChanged();
+//    unsigned char *colorData = colorImage.getPixels().getData();
+//    unsigned char *grayData = grayImage.getPixels().getData();
+//    unsigned char *edgeData = edgeImage.getPixels().getData();
+//    for (int i = 0; i < 1280*960; i++) {
+//        if (edgeData[i] == 0)
+//            grayData[i] = (grayData[i] / (threshold+1)) * (threshold+1) + threshold;
+//        else
+//            grayData[i] = 0;
+//    }
+//    
+//    // updateのようなもの
+//    // ofxOpenCv の画像オブジェクトを OpenCV 関数によって変更したり，あるいはピクセルデータを直接書き換えた場合）
+//    grayImage.flagImageChanged();
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
     //  draw camera image
     //    camera.draw(0, 0, 640, 480);
-    //    edgeImage.draw(640, 0, 640, 480);
+//        edgeImage.draw(640, 0, 640, 480);
     //    grayImage.draw(1280, 0, 640, 480);
     
     grayImage.draw(0, 0, 1280, 960);
