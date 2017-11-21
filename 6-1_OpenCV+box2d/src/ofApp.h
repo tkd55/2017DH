@@ -3,9 +3,6 @@
 #include "ofMain.h"
 #include "ofxOpenCv.h"
 
-#include "ofxBox2d.h"
-#include "CustomCircle.hpp"
-
 class ofApp : public ofBaseApp{
 
 	public:
@@ -42,15 +39,8 @@ class ofApp : public ofBaseApp{
     ofxCvContourFinder contourFinder;
     
     
-    ofxBox2d box2d; //box2dのインスタンス
     
-    static const int BOLB_NUM = 10;
+    vector<ofPolyline> edgeLines;
     
-    ofPolyline edgeLines[BOLB_NUM];
-    ofPtr<ofxBox2dPolygon> edges[BOLB_NUM];
-    
-    ofxBox2dCircle  circles[100];    // Box2dで使える円
-
-    
-    
+		
 };

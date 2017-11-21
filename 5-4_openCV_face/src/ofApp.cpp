@@ -10,8 +10,9 @@ void ofApp::setup(){
     // カラー画像とグレー画像の画像領域を確保
     colorImg.allocate(MOVIE_INPUT_WSIZE, MOVIE_INPUT_HSIZE);
     grayImg.allocate(MOVIE_INPUT_WSIZE, MOVIE_INPUT_HSIZE);
+    
     // 検分器の読み込み
-    haarFinder.setup("haarcascade_frontalface_alt2.xml");
+    haarFinder.setup("haarcascade_frontalface_default.xml");
     
 }
 
