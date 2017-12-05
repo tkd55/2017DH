@@ -4,7 +4,7 @@
 #include "ofxCv.h"
 
 #include "ofxFaceTracker.h"
-#include "ofxTrueTypeFontUC.h"
+//#include "ofxTrueTypeFontUC.h"
 
 class ofApp : public ofBaseApp{
 
@@ -30,7 +30,7 @@ class ofApp : public ofBaseApp{
     ofxFaceTracker tracker;
     
     ofImage colorImg;
-    ofxTrueTypeFontUC myFont;
+//    ofxTrueTypeFontUC myFont;
     
     
     ofColor color;
